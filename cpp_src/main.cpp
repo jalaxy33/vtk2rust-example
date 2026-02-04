@@ -61,16 +61,16 @@ int main() {
               << std::endl;
 
     // Convert back to VTK
-    auto backToVtk = rust_to_vtk(*rustImage);
-    std::cout << "Converted back to VTK - Image size: "
-              << backToVtk->GetDimensions()[0] << "x"
-              << backToVtk->GetDimensions()[1] << std::endl;
-
     // Test rotation
     auto rotated = rotate90(*rustImage);
     ImageInfo rotatedInfo = image_info(*rotated);
     std::cout << "Rotated - Image size: " << rotatedInfo.width << "x"
               << rotatedInfo.height << std::endl;
+
+    auto backToVtk = rust_to_vtk(*rotated);
+    std::cout << "Converted back to VTK - Image size: "
+              << backToVtk->GetDimensions()[0] << "x"
+              << backToVtk->GetDimensions()[1] << std::endl;
 
     return 0;
 }

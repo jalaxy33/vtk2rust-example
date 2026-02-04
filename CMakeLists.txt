@@ -87,7 +87,7 @@ function(setup_rust_library targetname rustlibname)
 endfunction()
 
 # =============================================================================
-# VTK Configuration
+# VTK Configuration (Linux Example)
 # =============================================================================
 
 include_directories(/usr/include/vtk)
