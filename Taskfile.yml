@@ -4,7 +4,6 @@ version: "3"
 
 tasks:
   # -- C++ Tasks
-
   cpp:
     desc: Build C++ code
     cmds:
@@ -23,3 +22,21 @@ tasks:
       - cargo build --release
       - cmake -B build/Release -DCMAKE_BUILD_TYPE=Release
       - cmake --build build/Release
+
+
+  # -- Cleanup tasks
+  clean:
+    desc: Clean build and run artifacts
+    cmds:
+      - cargo clean
+      - rm -rf build
+      - rm -rf .cache
+
+
+  # -- Git-related tasks
+  git-push:
+    desc: push changes to the remote repository
+    cmds:
+      - git push origin --all
+      - git push --force origin --tags
+
