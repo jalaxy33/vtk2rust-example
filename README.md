@@ -23,7 +23,7 @@ This generates the Rust library and CXX bridge headers in `target/`.
 ### 2. Build C++ Demo
 
 ```bash
-cmake -B build/Release -S . -DCMAKE_BUILD_TYPE=Release
+cmake -B build/Release -DCMAKE_BUILD_TYPE=Release
 cmake --build build/Release
 ```
 
