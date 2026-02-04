@@ -2,25 +2,6 @@
 
 Demonstrates passing VTK image data (`vtkImageData`) from C++ to Rust for image processing using the [CXX](https://cxx.rs/) FFI library.
 
-## Architecture
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   VTK C++   │────▶│  CXX FFI    │────▶│    Rust     │
-│             │     │   Bridge    │     │             │
-│vtkJPEGReader│     │             │     │  RustImage  │
-│     ↓       │     │ image_from_ │     │      ↓      │
-│vtkImageData │────▶│   pixels()  │────▶│ image crate │
-│(GetScalar    │     │             │     │(processing) │
-│  Pointer)   │     │             │     │      ↓      │
-│     ↓       │     │             │────▶│  rotate90() │
-│vtk_to_rust()│     │             │     │             │
-│             │     │  image_to_  │◄────│ image_to_   │
-│rust_to_vtk()│◄────│   vec()     │     │   vec()     │
-│     ↓       │     │             │     │             │
-│vtkImageData │     │             │     │             │
-└─────────────┘     └─────────────┘     └─────────────┘
-```
 
 ## Prerequisites
 
