@@ -1,0 +1,11 @@
+# github stuffs
+.github/
+.wiki/
+
+# build artifacts
+target/
+build/
+.cache/
+
+# large files
+data/

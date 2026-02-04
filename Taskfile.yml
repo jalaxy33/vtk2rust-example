@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  # -- C++ Tasks
+
+  cpp:
+    desc: Build C++ code
+    cmds:
+      - task: cpp-debug
+
+  cpp-debug:
+    desc: Build C++ code in debug mode
+    cmds:
+      - cargo build --release
+      - cmake -B build/Debug -DCMAKE_BUILD_TYPE=Debug
+      - cmake --build build/Debug
+
+  cpp-release:
+    desc: Build C++ code in release mode
+    cmds:
+      - cargo build --release
+      - cmake -B build/Release -DCMAKE_BUILD_TYPE=Release
+      - cmake --build build/Release

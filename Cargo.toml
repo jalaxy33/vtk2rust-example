@@ -1,0 +1,16 @@
+[package]
+name = "mycrate"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "mycrate"
+crate-type = ["rlib", "cdylib"]
+
+
+[dependencies]
+cxx = "1.0.194"
+image = "0.25.9"
+
+[build-dependencies]
+cxx-build = { version = "1.0.194", features = ["parallel"] }
