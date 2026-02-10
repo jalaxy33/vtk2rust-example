@@ -9,3 +9,8 @@ build/
 
 # large files
 data/
+
+
+# generated files
+results/
+
