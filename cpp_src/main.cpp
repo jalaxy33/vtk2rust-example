@@ -5,7 +5,6 @@
 #include "image_utils.h"
 #include "mycrate/src/cpp_ffi.rs.h"
 #include "path_utils.h"
-#include "vtkImageData.h"
 #include "vtk_utils.h"
 
 using namespace std;
